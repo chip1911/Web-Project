@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>All Books</title>
+    <title>Sách tâm linh - tôn giáo</title>
 </head>
 <body style="max-width: 1170px;
             margin: 0 auto;
