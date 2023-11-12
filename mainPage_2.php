@@ -286,7 +286,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách kinh doanh</a>
+                    <a href="productLine.php?idPL=SKD" class="product-cat">Sách kinh doanh</a>
                     <a href="detailProduct.php?idP=TND" class="product-name">Thiên Nga Đen </a>
                     <div class="product-price"><?php echo number_format(200000) ?></div>
                 </div>
@@ -307,7 +307,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Truyện ngắn văn học</a>
+                    <a href="productLine.php?idPL=TNVH" class="product-cat">Truyện ngắn văn học</a>
                     <a href="detailProduct.php?idP=YNDKHH" class="product-name">Yêu Những Điều Không Hoàn Hảo</a>
                     <div class="product-price"><?php echo number_format(110000) ?></div>
                 </div>
@@ -328,7 +328,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách trinh thám</a>
+                    <a href="productLine.php?idPL=STT" class="product-cat">Sách trinh thám</a>
                     <a href="detailProduct.php?idP=HV" class="product-name">Học Viện - The Institute</a>
                     <div class="product-price"><?php echo number_format(225000) ?></div>
                 </div>
@@ -349,7 +349,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="add_to_cart.php?idP=NKXC" class="product-cat">Sách tham khảo</a>
+                    <a href="productLine.php?idPL=STK" class="product-cat">Sách tham khảo</a>
                     <a href="detailProduct.php?idP=NKXC" class="product-name">Những Kẻ Xuất Chúng </a>
                     <div class="product-price"><?php echo number_format(200000) ?></div>
                 </div>
@@ -370,7 +370,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách trinh thám</a>
+                    <a href="productLine.php?idPL=STT" class="product-cat">Sách trinh thám</a>
                     <a href="detailProduct.php?idP=VRCCA" class="product-name">Và Rồi Chẳng Còn Ai</a>
                     <div class="product-price"><?php echo number_format(100000) ?></div>
                 </div>
@@ -391,7 +391,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách kỹ năng</a>
+                    <a href="productLine.php?idPL=SKN" class="product-cat">Sách kỹ năng</a>
                     <a href="detailProduct.php?idP=SMCTQ" class="product-name">Sức Mạnh Của Thói Quen</a>
                     <div class="product-price"><?php echo number_format(150000) ?></div>
                 </div>
@@ -412,7 +412,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách tâm lý học</a>
+                    <a href="productLine.php?idPL=STLH" class="product-cat">Sách tâm lý học</a>
                     <a href="detailProduct.php?idP=DDD" class="product-name">Đại Dương Đen</a>
                     <div class="product-price"><?php echo number_format(190000) ?></div>
                 </div>
@@ -433,7 +433,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Truyện</a>
+                    <a href="productLine.php?idPL=T" class="product-cat">Truyện</a>
                     <a href="detailProduct.php?idP=TLMNDK" class="product-name">Trốn Lên Mái Nhà Để Khóc</a>
                     <div class="product-price"><?php echo number_format(80000) ?></div>
                 </div>
@@ -454,7 +454,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách tâm linh - tôn giáo</a>
+                    <a href="productLine.php?idPL=STLTG" class="product-cat">Sách tâm linh - tôn giáo</a>
                     <a href="detailProduct.php?idP=KDKSDSH" class="product-name">Không Diệt Không Sinh Đừng Sợ Hãi</a>
                     <div class="product-price"><?php echo number_format(75000) ?></div>
                 </div>
@@ -475,7 +475,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách kỹ năng</a>
+                    <a href="productLine.php?idPL=SKN" class="product-cat">Sách kỹ năng</a>
                     <a href="detailProduct.php?idP=TTHVTCX" class="product-name">Tôi Thấy Hoa Vàng Trên Cỏ Xanh</a>
                     <div class="product-price"><?php echo number_format(80000) ?></div>
                 </div>
@@ -496,7 +496,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách tâm lý học</a>
+                    <a href="productLine.php?idPL=STLH" class="product-cat">Sách tâm lý học</a>
                     <a href="detailProduct.php?idP=TTTL" class="product-name">Thao Túng Tâm Lý</a>
                     <div class="product-price"><?php echo number_format(80000) ?></div>
                 </div>
@@ -517,7 +517,7 @@
                     
                 </div>
                 <div class="product-info">
-                    <a href="#" class="product-cat">Sách kinh doanh</a>
+                    <a href="productLine.php?idPL=SKD" class="product-cat">Sách kinh doanh</a>
                     <a href="detailProduct.php?idP=TDKTPCTKD" class="product-name">Tư Duy Kế Toán Phải Có Trong Kinh Doanh</a>
                     <div class="product-price"><?php echo number_format(80000) ?></div>
                 </div>

@@ -1,10 +1,33 @@
+<?php
+    $conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
+    if($conn->connect_error){
+        die("Connect failed". mysqli_connect_error());
+    }
+
+    $idPL = $_GET['idPL'];
+
+    $findProductLine = "SELECT productLine from productLines WHERE productLineCode= '$idPL';";
+    
+    $run = mysqli_query($conn, $findProductLine);
+    $productLine = mysqli_fetch_assoc($run);
+    
+    
+    $takeSQL = "SELECT*FROM product 
+                INNER JOIN productLines
+                ON product.productLine = productLines.productLine 
+                WHERE  productLines.productLineCode = '$idPL';";
+    $result = mysqli_query($conn, $takeSQL);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>All Books</title>
+    <title><?php echo $productLine['productLine']; ?></title>
 </head>
 <body style="max-width: 1170px;
             margin: 0 auto;
@@ -148,23 +171,14 @@
     <div id = "wrapper">
         <div class = "titleOfPage">
             <h2>
-                <i><b>Kho sách vô tận của chúng mình</b></i>
+                <i><b><?php echo $productLine['productLine']; ?></b></i>
             </h2>
         </div>
     </div>
     <?php
-    // ket noi voi csdl
-    $conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
-    if($conn->connect_error){
-        die("Connect failed". mysqli_connect_error());
-    }
+    
 
-    $take_SQL = "
-    select*from
-    product 
-    inner join productLines on product.productLine = productLines.productLine;";
 
-    $result = mysqli_query($conn, $take_SQL);
     
     while($row = mysqli_fetch_assoc($result)){
         if($row == null) break;
