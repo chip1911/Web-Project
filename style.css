@@ -1,0 +1,37 @@
+#headPage{
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 1px;
+}
+
+#storeBookName{
+            
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 400%;
+    padding: 1px;
+    flex: 1;
+    
+
+}
+
+#searchBar{
+    border-style:none;
+    background-color: antiquewhite;
+    width: 200px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 120%;
+}
+ul li{
+    width: 10%;
+    list-style: none;
+    display: inline;
+}
+
+ul#chooseBar li a{
+   text-decoration: none;
+   width: 20%;
+   font-size: 200%;
+   margin: 30px;
+}
