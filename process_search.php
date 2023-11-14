@@ -167,7 +167,7 @@
     <div id = "wrapper">
         <div class = "titleOfPage">
             <h2>
-                <i><b>Kho sách vô tận của chúng mình</b></i>
+                <i><b>Kết quả</b></i>
             </h2>
         </div>
     </div>
