@@ -34,7 +34,7 @@
         
         }
 
-        #search{
+        #search form{
             width: 20%;
             font-family: 'Times New Roman', Times, serif;
             font-size: 100%;
@@ -242,8 +242,13 @@
 
         <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h>
     
+        
+            <!-- <input id="search" type="text" name ="search" o="location.href='search.php'" placeholder="Search..."> -->
+        
+            <form action="process_search.php" method="post" id="search">
+                <input style="background-color:antiquewhite; border-style:none none dashed none;" name="search" type="text" placeholder="Search...">
+            </form>
 
-        <input id="search" type="text" placeholder="Search...">
         <ul id="option">
             <li>
                 <a title="Gọi ngay 0392883607"> &#128222 </a>

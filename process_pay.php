@@ -25,7 +25,7 @@
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $orderdate = date('Y-m-d H:i:s');
         $customerId = $conn->insert_id;
-        $status = "preparing";
+        $status = "Ordered";
 
         $insertOrdersSQL = "INSERT INTO orders(orderdate, status, customerId )
                             VALUES ('$orderdate', '$status', '$customerId');";

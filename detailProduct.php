@@ -258,7 +258,7 @@ img {
                         <!-- nhà xuất bản -->
 
                         <div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<button class="add-to-cart btn btn-default" type="button" onclick="location.href='add_to_cart.php?idP=<?php echo $row['productCode']; ?>'">add to cart</button>
 							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
 						</div>
                         

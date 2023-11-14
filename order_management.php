@@ -4,11 +4,12 @@ if($conn->connect_error){
     die("Connect failed". mysqli_connect_error());
 }
 
-echo "ĐƠN HÀNG HÔM NAY";
 $takeSQL = "SELECT*FROM orders 
-            inner join customers 
-            on orders.customerId = customers.customerId 
-            WHERE date(orderdate) = CURDATE();";
+inner join customers 
+on orders.customerId = customers.customerId 
+inner join orderdetails on orderdetails.orderId = orders.orderId
+inner join product on product.productCode = orderdetails.productCode
+WHERE date(orderdate) = CURDATE();";
 
 ?>
 
@@ -29,8 +30,77 @@ $takeSQL = "SELECT*FROM orders
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* DEFINITION OF HEADER. */
+        #headPage{
+            display: flex;
+            justify-content: space-between;
+            background-color: antiquewhite;
+            align-items: center;
+            padding: 0px;
+        }
+
+        .clearfix{
+            clear: both;
+        }
+        #menu{
+            width:5%;
+            text-decoration: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 200%;
+            height: 100%;
+        }
+
+        #storeBookName{
+            color: black;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 400%;
+            flex: 1;
+        
+        }
+
+        #search{
+            width: 20%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+            background-color: antiquewhite;
+            
+            border-style: none none dashed none;
+            
+        }
+
+        ul li{
+            display: inline;
+        }
+
+        #option {
+            margin-right:15%;
+            width: 80px;
+            text-decoration: none;
+            font-size: 150%;
+        }
+        /* DEFINITION OF HEADER. */
+
+    </style>
 </head>
-<body>
+<body style="margin: auto; padding:100px;">
+<!-- DESIGN HEADER GOES HERE. -->
+<div id="headPage">
+        <a href="menu.html" id="menu" style="height: 100%;"> &#129527 </a>
+
+        <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h>
+    
+
+        <div id="option">
+            <a title="Gọi ngay 0392883607"> &#128222 </a>  
+        </div>
+           
+
+            
+        
+        <div class="clearfix"></div>
+    </div>
+    <!-- DESIGN HEADER GOES HERE. -->
 <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -39,12 +109,12 @@ $takeSQL = "SELECT*FROM orders
         <th style ="text-align: center; vertical-align: middle;">Địa chỉ khách hàng</th>
         <th style ="text-align: center; vertical-align: middle;">Sản phẩm đặt</th>
         <th style ="text-align: center; vertical-align: middle;">Số lượng</th>
-        <th style ="text-align: center; vertical-align: middle;">Tác giả</th>
-        <th style ="text-align: center; vertical-align: middle;">Ảnh minh họa sách</th>
         <th style ="text-align: center; vertical-align: middle;">Thao tác</th>
       </tr>
     </thead>
     <tbody>
+
+    <h1 style="text-align:center;">ĐƠN HÀNG HÔM NAY</h1>
 
     <!-- Xử lí PHP để in ra các sản phẩm đã được thêm vào -->
     <?php
@@ -59,16 +129,14 @@ $takeSQL = "SELECT*FROM orders
             . $row['productVendor'] . $row['productDescription'] . $row['quantityInStock']
             . $row['author'] . $row['buyPrice'] . $row['MSRP'] . $row['image']; -->
         <tr style="background-color:rgb(253, 236, 253);">
-        <td style ="text-align: center; vertical-align: middle;font-weight: bold;"><?php echo $row['productCode'] ?></td>
-        <td style ="text-align: center; vertical-align: middle; font-style: italic; font-size:larger; color: rgb(10, 144, 144); font-weight: bold;"><?php echo $row['productName'] ?></td>
-        <td style ="text-align: center; vertical-align: middle;"><?php echo $row['quantityInStock'] ?></td>
-        <td style ="text-align: center; vertical-align: middle;"><?php echo $row['buyPrice'] ?></td>
-        <td style ="text-align: center; vertical-align: middle;"><?php echo $row['MSRP'] ?></td>
-        <td style ="text-align: center; vertical-align: middle;"><?php echo $row['author'] ?></td>
-        <td style ="text-align: center; vertical-align: middle;"><img src="<?php echo $row['image']; ?>" alt="" width = "200" height = "200" ></td>
+        <td style ="text-align: center; vertical-align: middle;font-weight: bold;"><?php echo $row['orderId'] ?></td>
+        <td style ="text-align: center; vertical-align: middle; font-style: italic; font-size:larger; color: rgb(10, 144, 144); font-weight: bold;"><?php echo $row['customerName'] ?></td>
+        <td style ="text-align: center; vertical-align: middle;"><?php echo $row['address'] . ", " . $row['commune'] . ", " . $row['district'] . ", " . $row['city'] . ", " . $row['country'] ?></td>
+  
+        <td style ="text-align: center; vertical-align: middle;"><img src="<?php echo $row['image']; ?>" alt="" width = "150" height = "150" ></td>
+        <td style ="text-align: center; vertical-align: middle;"><?php echo $row['quantityOrdered'] ?></td>
         <td style ="text-align: center; vertical-align: middle;">
-            <a href="seller_edit_addProduct.php?idP=<?php echo $row['productCode']; ?>" class="btn btn-info">Edit</a>
-            <a onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?')" href="seller_delete_addProduct.php?idP=<?php echo $row['productCode']; ?>" class="btn btn-danger">Delete</a></td>
+            <a href="edit_order_management.php?Oid=<?php echo $row['orderId']; ?>&status=<?php echo $row['status']; ?>" class="btn btn-info"><?php echo $row['status'];?></a>
         </tr>
     <?php
     }
