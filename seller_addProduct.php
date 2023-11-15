@@ -26,7 +26,7 @@
 
     //viet lenh sql de chen vao du lieu 
     $insertSQL = "INSERT INTO 
-                    product
+                    product(productCode,productName, productLine, productVendor, productDescription, quantityInStock, buyPrice, MSRP, author, image)
                     VALUES('$productCode', '$productName', '$productLine', '$productVendor', '$productDescription', $quantityInStock, $buyPrice, $MSRP, '$author', '$image');";
     
     // thuc thi cau lenh voi mysqli_query
