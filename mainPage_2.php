@@ -3,44 +3,125 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title> Book Store </title>
+    <link rel="icon" type="image/x-icon" href="image/62.png">
 
     <style>
         /* DEFINITION OF HEADER. */
         #headPage{
             display: flex;
-            justify-content: space-between;
-            background-color: antiquewhite;
+            /* justify-content: space-between; */
+            /* background-color: antiquewhite; */
             align-items: center;
-            padding: 0px;
+            padding-bottom: 3px;
+            padding-top: 0px;
+
+            /* border-style: none none dashed none; */
+            border-bottom: 3px outset green;
+            background-color:antiquewhite ;
+
         }
 
         .clearfix{
             clear: both;
         }
-        #menu{
-            width:5%;
-            text-decoration: none;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 200%;
-            height: 100%;
-        }
 
-        #storeBookName{
-            color: black;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 400%;
-            flex: 1;
+        #logo{
+            margin-left: 125px;
+            margin-right: -13px;
+
         
         }
 
-        #search form{
-            width: 20%;
+        ul.op1  li{
+            text-decoration-color:black ;
+            margin-left: 10px;
+
+
+
+        }
+
+        ul.op1 > li > a{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            text-align: left;
+            text-decoration: none;
+            text-decoration-color:black ;
+            font-size: 130%;
+            padding: 30px;
+            color: rgb(10, 144, 144);
+
+
+
+        }
+
+        ul.op1  li  a:hover {
+           color: #DD0000
+
+;
+        }
+
+        ul.submenu {
+            width: auto;
+            height: auto;
+            display: none;
+           position: absolute;
+           background-color: #f9f9f9;
+           margin-left: 60px;
+           margin-top: 0px;
+           background-color: lavenderblush;
+
+           z-index: 1;
+           
+           
+
+}
+        ul.submenu  li{
+            /* margin-bottom: 10px; */
+            margin-left: 0px;
+            padding: 10px;
+
+            
+
+        }
+
+
+        ul.submenu  li  a {
+            border-bottom: 1px solid green;
+            line-height: 40px;
+            width: 200px;  
+            /* margin-top: 10px; */
+            margin-left: 0px;
+            text-align: center;
+            width :100%;
+            text-decoration: none;
+            font-size: 120%;
+            color: rgb(10, 144, 144);
+            font-family: 'Courier New', Courier, monospace;
+            
+
+
+            
+        }
+
+        li:hover ul.submenu {
+           display: block;
+        }
+        
+
+
+        #search{
+            width: 100%;
             font-family: 'Times New Roman', Times, serif;
             font-size: 100%;
-            background-color: antiquewhite;
-            
-            border-style: none none dashed none;
+            margin-left: 65px;
+            margin-right: 0px;
+
+            border: 2px solid lightgray;
+            border-radius: 12px;
+            padding: 7px;
             
         }
 
@@ -48,21 +129,24 @@
             display: inline;
         }
 
-        ul#option li a{
-            width: 80px;
-            margin-left: 30px;
+        ul#option  li  a{
+            width: 100px;
+            margin-left: 10px;
+            margin-right: 20px;
+
             text-decoration: none;
             font-size: 150%;
+        }
+        ul#option li {
+            margin-left: 210px;
+           
         }
         /* DEFINITION OF HEADER. */
 
 
         /* DEFINITION OF CONTENT */
         .loadImage{
-            flex-basis: 50%;
-
-            display: flex;
-            justify-content: space-between;
+            display: __autoload;
         }
         /* DEFINITION OF CONTENT */
 
@@ -91,14 +175,16 @@
             font-size: 200%;
             text-align: center;
             padding: 30px;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
 
-        ul li a{
+        /* ul  li  a{
             font-family: 'Courier New', Courier, monospace;
             color: rgb(10, 144, 144);
             text-decoration: none;
             margin: 20px;
-        }
+        } */
         /* DEFINITION OF FOOTER */
 
         /* DEFINITION FOR Sách Tiêu Biểu */
@@ -216,7 +302,7 @@
             font-family:monospace;
             text-align: center;
         }
-        ul.products li .product-info a.product-name{
+        ul.products  li  .product-info a.product-name{
             font-size: 115%;
             color:rgb(10, 144, 144);
             font-family:Arial, Helvetica, sans-serif;
@@ -232,52 +318,109 @@
         }
                 /* DEFINITION FOR Sách Tiêu Biểu */
 
+        .h3 {
+            text-align: center;
+            font-family: cursive;
+            font-style: italic;
+            font-size: 130%;
+            margin-top: 0px;
+            padding-top: 10px;
+        }
+        .under {
+            margin-top: 0px;
+
+        }
+
+        .h4 {
+            text-align: center;
+            font-family: cursive;
+            font-size: 200%;
+            /* margin-top: 0px;
+            padding-top: 10px; */
+        }
+
     </style>
 </head>
 
 <body>
     <!-- DESIGN HEADER GOES HERE. -->
     <div id="headPage">
-        <a href="menu.html" id="menu" style="height: 100%;"> &#129527 </a>
 
-        <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h>
-    
+        <!-- <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h> -->
+        <img id="logo" src="image/62.png" width="100" height="100px">
+
         
-            <!-- <input id="search" type="text" name ="search" o="location.href='search.php'" placeholder="Search..."> -->
-        
-            <form action="process_search.php" method="post" id="search">
-                <input style="background-color:antiquewhite; border-style:none none dashed none;" name="search" type="text" placeholder="Search...">
+
+        <ul class="op1">
+            <li>
+                <a href=""mainPage_2.php style="color: black hover= #DD0000;"><b>Trang chủ</b></a>
+            </li>
+
+            <li>
+                <a href=""><b> Menu</b></a>
+                <ul class="submenu" >
+                  <li>
+                    <a href="all_book.php"><b>Tất cả sách</b></a>
+                  </li>
+                  <br>
+                  <li><a href="productLine.php?idPL=SKN"><b>Sách kỹ năng</b></a></li>
+                  <br>
+                  <li><a href="productLine.php?idPL=STLTG"><b>Sách tâm linh - tôn giáo</b></a></li>
+                  <br>
+                  <li><a href="productLine.php?idPL=STK"><b> Sách tham khảo</b></a></li>
+                  <br>
+                  <li><a href="productLine.php?idPL=STLH"><b>Sách tâm lý học</b></a></li>
+                  <br>
+                 <li><a href="productLine.php?idPL=TT"><b>Tiểu thuyết</b></a></li>
+                 <br>
+                 <li><a href="productLine.php?idPL=SSH"><b>Sách self-help</b></a></li>
+                 <br>
+                 <li><a href="productLine.php?idPL=STT"><b>Sách trinh thám</b></a></li>
+                <br>
+                <li><a href="productLine.php?idPL=NK"><b>Nhật ký</b></a></li>
+                <br>
+                <li><a href="productLine.php?idPL=T"><b>Truyện</b></a></li>
+                <br>
+                <li><a href="productLine.php?idPL=SKD"><b>Sách kinh doanh</b></a></li>
+                <br>
+                <li><a href="productLine.php?idPL=TNVH"><b>Truyện ngắn văn học</b></a></li>
+            
+                </ul>
+            </li>
+            <li>
+                <a title="Gọi ngay 0392883607"><b>Liên hệ</b></a>
+            </li>
+        </ul>
+
+        <form action="process_search.php" method="post" >
+                <input id="search" name="search" type="text" placeholder="Search...">
             </form>
 
         <ul id="option">
             <li>
-                <a title="Gọi ngay 0392883607"> &#128222 </a>
-            </li>
-
-            <li>
                 <a href="list_add_to_cart.php" title="Giỏ hàng của tôi"> &#128092 </a>
-            </li>
-
-            <li>
-                <a href="ordered.html" title="Đơn hàng đã đặt"> &#128203 </a>
             </li>
         </ul>
         <div class="clearfix"></div>
     </div>
     <!-- DESIGN HEADER GOES HERE. -->
 
-
+<div class="under">
     <!-- DESIGN CONTENT GOES HERE. -->
-    <h3 style="text-align: center;">Good books, like good friends, are few and chosen; the more select, the more enjoyable. ( Louisa May Alcott )</h3>
-    <div class = "loadImage">
-        <img src = "image/bookStoreImage_5.jpg">
-        <img src = "image/bookStoreImage_6.jpg">
+    <h3 class="h3">Good books, like good friends, are few and chosen; the more select, the more enjoyable. ( Louisa May Alcott )</h3>
+    <div >
+        <img src = "image/bookStoreImage_6.jpg" width="400" height="500">
+        <img src = "image/bia4.jpg" width="700" height="500">
+        <img src = "image/bookStoreImage_2jpg.jpg" width="395" height="500">
+
+
+        <!-- <img src = "image/bookStoreImage_6.jpg"> -->
         <!-- <img src = "bookStoreImage_4.jpg"> -->
     </div>
 
-    <h2 style="color:rgb(30, 231, 234); font-size: 180%; text-align: center;"> <ins><i>Gợi ý một số sách hay nhà mình </h2></i></ins>
+    <h2 class="h4"> <ins><b>GỢI Ý MỘT SỐ SÁCH HAY NHÀ MÌNH</b></h2></ins>
 
-    <ul class="products" style="max-width: 1170;">
+    <ul class="products" >
         <li>
             <div class="product-item">
                 <div class = "product-top">
@@ -531,6 +674,7 @@
         </li>
 
     </ul>
+</div>   
     <!-- DESIGN CONTENT GOES HERE. -->
 
 
@@ -584,17 +728,17 @@
             <ul id = "inf">
                 <i style="text-decoration: underline;"><b> See more us on:</b></i></p>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100022034102353&sk=grid">Facebook</a>
+                    <a href="" style="text-decoration:none; color:coral; font-family:'Courier New', Courier, monospace;">Facebook</a>
     
                 </li>
                 <li>
-                    <a href=""><b>Instagram</b></a>
+                    <a href="" style="text-decoration:none; color:rgb(10, 144, 144); font-family:'Courier New', Courier, monospace;"><b>Instagram</b></a>
                 </li>
                 <li>
-                    <a href="">Tiktok</a>
+                    <a href="" style="text-decoration:none; color:coral; font-family:'Courier New', Courier, monospace;">Tiktok</a>
                 </li>
                 <li>
-                    <a href=""><b>Youtube</b></a>
+                    <a href="" style="text-decoration:none; color:rgb(10, 144, 144); font-family:'Courier New', Courier, monospace;"><b>Youtube</b></a>
                 </li>
             </ul>
         </div>
@@ -612,3 +756,4 @@
 
 </body>
 </html>
+

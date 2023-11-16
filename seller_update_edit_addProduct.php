@@ -2,7 +2,7 @@
     // lấy idP được gửi trong address của form action cảu seller_edit_addProduct.php
     $idP = $_GET['idP'];
 
-    $conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
+    $conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
     if($conn->connect_error){
         die("Connect failed". mysqli_connect_error());
     }

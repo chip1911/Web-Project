@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
+    $conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
     if($conn->connect_error){
         die("Connect failed". mysqli_connect_error());
     }
@@ -72,9 +72,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="image/62.png">
+
+    <style>
+        .temp {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 300%;
+        }
+    </style>
 </head>
+<<<<<<< HEAD
 <body>
     <h1 style="color:brown">Cảm ơn bạn đã đặt hàng. Chúng mình sẽ giao hàng đến bạn sớm nhất có thể.</h1>
     <a href="mainPage_2.php">Tiếp tục mua hàng</a>
+=======
+<body style="background-color: rgb(253, 236, 253);">
+    <div class="temp">
+    <p>Cảm ơn bạn đã đặt hàng!</p>
+    <br>
+     <p>Chúng mình sẽ giao hàng đến bạn sớm nhất có thể.</p>
+     <br>
+    <a href="mainPage_2.php" style="color: lightseagreen;">Tiếp tục mua hàng</a>
+    </div>
+>>>>>>> 9b2028a37c792a4891498d5028eea2954e47924b
 </body>
 </html>
