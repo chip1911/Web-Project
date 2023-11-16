@@ -9,7 +9,7 @@ inner join customers
 on orders.customerId = customers.customerId 
 inner join orderdetails on orderdetails.orderId = orders.orderId
 inner join product on product.productCode = orderdetails.productCode
-WHERE date(orderdate) = CURDATE();";
+WHERE date(orderdate) = CURDATE() OR status != 'Delivered';";
 
 ?>
 

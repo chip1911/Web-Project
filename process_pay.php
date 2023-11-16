@@ -74,7 +74,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Cảm ơn bạn đã đặt hàng. Chúng mình sẽ giao hàng đến bạn sớm nhất có thể.</h1>
+    <h1 style="color:brown">Cảm ơn bạn đã đặt hàng. Chúng mình sẽ giao hàng đến bạn sớm nhất có thể.</h1>
     <a href="mainPage_2.php">Tiếp tục mua hàng</a>
 </body>
 </html>
