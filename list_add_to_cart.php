@@ -2,7 +2,7 @@
 session_start();
 
 // Kết nối với cơ sở dữ liệu
-$conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
+$conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
 if ($conn->connect_error) {
     die("Connect failed" . mysqli_connect_error());
 }
@@ -37,6 +37,8 @@ if (isset($_SESSION['cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Add Product</title>
+    <link rel="icon" type="image/x-icon" href="image/62.png">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
@@ -50,72 +52,134 @@ if (isset($_SESSION['cart'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         /* DEFINITION OF HEADER. */
-        #headPage {
+        #headPage{
             display: flex;
-            justify-content: space-between;
-            background-color: antiquewhite;
+            /* justify-content: space-between; */
+            /* background-color: antiquewhite; */
             align-items: center;
-            padding: 0px;
+            padding-bottom: 3px;
+            padding-top: 0px;
+
+            /* border-style: none none dashed none; */
+            border-bottom: 3px outset green;
+            background-color:antiquewhite ;
+
+        }
+       
+
+        #logo{
+            margin-left: 125px;
+        
         }
 
-        .clearfix {
-            clear: both;
+        ul.op1  li{
+            margin-left: 50px;
+
+
+
         }
 
-        #menu {
-            width: 5%;
-            text-decoration: none;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 200%;
-            height: 100%;
+        ul.op1 > li > a{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            text-align: left;
+            /* text-decoration: none; */
+            text-decoration:none ;
+            font-size: 130%;
+            padding: 12px;
+            color: rgb(10, 144, 144);
+
+
         }
 
-        #storeBookName {
-            color: black;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 400%;
-            flex: 1;
-            text-align: center;
+        ul.op1  li  a:hover {
+           color: #DD0000;
+
+
         }
 
-        #search {
-            width: 20%;
+       
+        
+
+
+        #search{
+            width: 100%;
             font-family: 'Times New Roman', Times, serif;
             font-size: 100%;
-            background-color: antiquewhite;
+            margin-left: 150px;
+            margin-right: 0px;
 
-            border-style: none none dashed none;
-
+            border: 2px solid lightgray;
+            border-radius: 12px;
+            padding: 7px;
+            
         }
 
-        ul li {
+        ul li{
             display: inline;
         }
 
-        ul#option li a {
-            width: 80px;
-            margin-left: 30px;
+        ul#option  li  a{
+            width: 100px;
+            margin-left: 10px;
+            margin-right: 20px;
+
             text-decoration: none;
             font-size: 150%;
         }
+        ul#option li {
+            margin-left: 250px;
+           
+        }
+
+        .body {
+            max-width: 1170px;
+            margin:auto;
+        }
         .empty-cart-message {
             text-align: center;
-            font-size: 18px;
-            color: red;
+            font-size: 50px;
+            color: black;
             margin-top: 20px;
+
         }
 
         /* DEFINITION OF HEADER. */
     </style>
 </head>
 
-<body class="container">
+<body style="padding: 8.3px;">
     <!-- DESIGN HEADER GOES HERE. -->
+    
     <div id="headPage">
-        <h id="storeBookName">&#128210<i>Book Store</i>&#128217</h>
-    </div>
+
+<!-- <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h> -->
+<img id="logo" src="image/62.png" width="100" height="100px">
+
+
+
+<ul class="op1">
+    <li>
+        <a href="mainPage_2.php" style="color: black hover= #DD0000;"><b>Trang chủ</b></a>
+    </li>
+
+    
+</ul>
+
+<form action="process_search.php" method="post" >
+        <input id="search" name="search" type="text" placeholder="Search...">
+    </form>
+
+<ul id="option">
+    <li>
+        <a href="list_add_to_cart.php" title="Giỏ hàng của tôi"> &#128092 </a>
+    </li>
+</ul>
+<div class="clearfix"></div>
+</div>
+
     <br>
-    <h1 style="text-align: center; color:plum">Giỏ hàng của tôi</h1>
+    <h1 style="text-align: center; color:black;"><b>Giỏ hàng của tôi<b></h1>
     <br>
     <!-- DESIGN HEADER GOES HERE. -->
 
@@ -180,7 +244,7 @@ if (isset($_SESSION['cart'])) {
             echo "Error executing SQL query: " . mysqli_error($conn);
         }
     } else {
-        echo '<div class="empty-cart-message">Your shopping cart is empty!</div>';
+        echo '<div class="empty-cart-message"><b>Your shopping cart is empty!</b></div>';
     }
     ?>
     </tbody>

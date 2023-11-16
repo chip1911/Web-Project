@@ -1,5 +1,5 @@
 <?php
-    $conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
+    $conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
     if($conn->connect_error){
         die("Connect failed". mysqli_connect_error());
     }
@@ -28,10 +28,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title><?php echo $productLine['productLine']; ?></title>
+    <link rel="icon" type="image/x-icon" href="image/62.png">
+
+    <style>
+         #headPage{
+            display: flex;
+            /* justify-content: space-between; */
+            /* background-color: antiquewhite; */
+            align-items: center;
+            padding-bottom: 3px;
+            padding-top: 0px;
+
+            /* border-style: none none dashed none; */
+            border-bottom: 3px outset green;
+            background-color:antiquewhite ;
+
+        }
+       
+
+        #logo{
+            margin-left: 125px;
+        
+        }
+
+        ul.op1  li{
+            text-decoration-color:black ;
+            margin-left: 50px;
+
+
+
+        }
+
+        ul.op1 > li > a{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            text-align: left;
+            /* text-decoration: none; */
+            text-decoration:none ;
+            font-size: 130%;
+            padding: 12px;
+            color: rgb(10, 144, 144);
+
+
+        }
+
+        ul.op1  li  a:hover {
+           color: #DD0000;
+
+
+        }
+
+        ul.submenu {
+            width: auto;
+            height: auto;
+            display: none;
+           position: absolute;
+           background-color: #f9f9f9;
+           margin-left: 100px;
+           margin-top: 0px;
+
+           z-index: 1;
+           
+           
+
+}
+        ul.submenu  li{
+            /* margin-bottom: 10px; */
+            margin-left: 17px;
+            padding: 30px;
+            
+
+        }
+
+
+        ul.submenu  li  a {
+            border-bottom: 1px solid green;
+            line-height: 40px;
+            width: 200px;  
+            /* margin-top: 10px; */
+            margin-left: 5px;
+            text-align: center;
+            width :100%;
+            text-decoration: none;
+            font-size: 120%;
+            color: rgb(10, 144, 144);
+            font-family: 'Courier New', Courier, monospace;
+
+            
+
+
+            
+        }
+
+        li:hover ul.submenu {
+           display: block;
+        }
+        
+
+
+        #search{
+            width: 100%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+            margin-left: 80px;
+            margin-right: 0px;
+
+            border: 2px solid lightgray;
+            border-radius: 12px;
+            padding: 7px;
+            
+        }
+
+        ul li{
+            display: inline;
+        }
+
+        ul#option  li  a{
+            width: 100px;
+            margin-left: 10px;
+            margin-right: 20px;
+
+            text-decoration: none;
+            font-size: 150%;
+        }
+        ul#option li {
+            margin-left: 250px;
+           
+        }
+
+        .body {
+            max-width: 1170px;
+            margin:auto;
+        }
+
+        /* DEFINITION OF FOOTER */
+        table {
+            width: 100%;
+            font-family: arial, sans-serif;
+            border-color: aliceblue;
+            color: pink;
+        }
+
+        th, td{
+            width:25%;
+            background-color: black;
+        }
+
+        #lastPage{
+            background-color: antiquewhite;
+            text-align: center;
+        }
+
+        #inf{
+            background-color: antiquewhite;
+            color: rgb(207, 78, 78);
+            font-size: 200%;
+            text-align: center;
+            padding: 30px;
+        }
+
+        ul#info > li > a{
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(10, 144, 144);
+            text-decoration: none;
+            margin: 20px;
+        }
+        /* DEFINITION OF FOOTER */
+    </style>
 </head>
-<body style="max-width: 1170px;
-            margin: 0 auto;
-            background-color: rgb(253, 236, 253); ">
+
+
+<body style="padding: 8.3px;">
     <style>
         *{
             padding: 0;
@@ -58,6 +225,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            background-color: rgb(253, 236, 253);   
+
         }
         ul.products li{
             flex-basis: 20%;
@@ -167,7 +336,71 @@
             color: rgb(236, 93, 37);
             text-align: center;
         }
+
     </style>
+
+<div id="headPage">
+
+<!-- <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h> -->
+<img id="logo" src="image/62.png" width="100" height="100px">
+
+
+
+<ul class="op1">
+    <li>
+        <a href="mainPage_2.php" style="color: black hover= #DD0000;"><b>Trang chủ</b></a>
+    </li>
+
+    <li>
+        <a href=""><b> Menu</b></a>
+        <ul class="submenu" >
+          <li>
+            <a href="all_book.php"><b>Tất cả sách</b></a>
+          </li>
+          <br>
+          <li><a href="productLine.php?idPL=SKN"><b>Sách kỹ năng</b></a></li>
+          <br>
+          <li><a href="productLine.php?idPL=STLTG"><b>Sách tâm linh - tôn giáo</b></a></li>
+          <br>
+          <li><a href="productLine.php?idPL=STK"><b> Sách tham khảo</b></a></li>
+          <br>
+          <li><a href="productLine.php?idPL=STLH"><b>Sách tâm lý học</b></a></li>
+          <br>
+         <li><a href="productLine.php?idPL=TT"><b>Tiểu thuyết</b></a></li>
+         <br>
+         <li><a href="productLine.php?idPL=SSH"><b>Sách self-help</b></a></li>
+         <br>
+         <li><a href="productLine.php?idPL=STT"><b>Sách trinh thám</b></a></li>
+        <br>
+        <li><a href="productLine.php?idPL=NK"><b>Nhật ký</b></a></li>
+        <br>
+        <li><a href="productLine.php?idPL=T"><b>Truyện</b></a></li>
+        <br>
+        <li><a href="productLine.php?idPL=SKD"><b>Sách kinh doanh</b></a></li>
+        <br>
+        <li><a href="productLine.php?idPL=TNVH"><b>Truyện ngắn văn học</b></a></li>
+    
+        </ul>
+    </li>
+    <li>
+        <a title="Gọi ngay 0392883607"><b>Liên hệ</b></a>
+    </li>
+</ul>
+
+<form action="process_search.php" method="post" >
+        <input id="search" name="search" type="text" placeholder="Search...">
+    </form>
+
+<ul id="option">
+    <li>
+        <a href="list_add_to_cart.php" title="Giỏ hàng của tôi"> &#128092 </a>
+    </li>
+</ul>
+<div class="clearfix"></div>
+</div>
+
+
+<div class="body">
     <div id = "wrapper">
         <div class = "titleOfPage">
             <h2>
@@ -310,5 +543,72 @@
     <?php
     }
     ?>
+    </div>
+
+    <!-- INFORMATION, COPYRIGHT -->
+    <table>
+        <th>
+            <br>&#128339 
+            <br>
+            <br>
+            7 NGÀY ĐỔI SẢN PHẨM NGUYÊN GIÁ 
+            <br>
+            Đổi trả sản phẩm trong 7 ngày
+            <br><br>
+        </th>
+
+        <th>
+            <br>
+            &#128222  
+            <br>
+            <br>
+            HOTLINE 1900 3060
+            <br>
+            8h00 - 17h00, T2 - T7 (Giờ hành chính)
+            <br><br>
+        </th>
+
+        <th>
+            <br> &#127970 
+            <br>
+            <br>
+            HỆ THỐNG CỬA HÀNG
+            <br>
+            10 cửa hàng trên toàn hệ thống
+            <br><br>
+        </th>
+
+        <th>
+            <br>
+            &#128666
+            <br>
+            <br>
+            VẬN CHUYỂN
+            <br>
+            Đồng giá 30k toàn quốc
+            <br><br>
+        </th>
+    </table>
+
+    
+        <div id="lastPage">
+            <ul id = "inf">
+                <i style="text-decoration: underline;"><b> See more us on:</b></i></p>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100022034102353&sk=grid">Facebook</a>
+    
+                </li>
+                <li>
+                    <a href=""><b>Instagram</b></a>
+                </li>
+                <li>
+                    <a href="">Tiktok</a>
+                </li>
+                <li>
+                    <a href=""><b>Youtube</b></a>
+                </li>
+            </ul>
+        </div>
+
 </body>
 </html>

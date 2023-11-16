@@ -1,7 +1,7 @@
 <?php
     session_start();
     // ket noi voi csdl
-    $conn = new mysqli('localhost', 'root', '400Qu_nT172Yj', 'bookstore');
+    $conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
     if($conn->connect_error){
         die("Connect failed". mysqli_connect_error());
     }
@@ -39,6 +39,8 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Add Product</title>
+    <link rel="icon" type="image/x-icon" href="image/62.png">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
@@ -50,8 +52,126 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        #headPage{
+            display: flex;
+            /* justify-content: space-between; */
+            /* background-color: antiquewhite; */
+            align-items: center;
+            padding-bottom: 3px;
+            padding-top: 0px;
+
+            /* border-style: none none dashed none; */
+            border-bottom: 3px outset green;
+            background-color:antiquewhite ;
+
+        }
+       
+
+        #logo{
+            margin-left: 125px;
+        
+        }
+
+        ul.op1  li{
+            margin-left: 50px;
+
+
+
+        }
+
+        ul.op1 > li > a{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            text-align: left;
+            /* text-decoration: none; */
+            text-decoration:none ;
+            font-size: 130%;
+            padding: 12px;
+            color: rgb(10, 144, 144);
+
+
+        }
+
+        ul.op1  li  a:hover {
+           color: #DD0000;
+
+
+        }
+
+       
+        
+
+
+        #search{
+            width: 100%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+            margin-left: 150px;
+            margin-right: 0px;
+
+            border: 2px solid lightgray;
+            border-radius: 12px;
+            padding: 7px;
+            
+        }
+
+        ul li{
+            display: inline;
+        }
+
+        ul#option  li  a{
+            width: 100px;
+            margin-left: 10px;
+            margin-right: 20px;
+
+            text-decoration: none;
+            font-size: 150%;
+        }
+        ul#option li {
+            margin-left: 250px;
+           
+        }
+
+        .body {
+            max-width: 1170px;
+            margin:auto;
+        }
+        .container {
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
-<body>
+<body style="padding: 8.3px;">
+
+<div id="headPage">
+
+<!-- <h id="storeBookName" >  &#128210<i>Book Store</i>&#128217 </h> -->
+<img id="logo" src="image/62.png" width="100" height="100px">
+
+
+
+<ul class="op1">
+    <li>
+        <a href="mainPage_2.php" style="color: black hover= #DD0000;"><b>Trang chủ</b></a>
+    </li>
+
+    
+</ul>
+
+<form action="process_search.php" method="post" >
+        <input id="search" name="search" type="text" placeholder="Search...">
+    </form>
+
+<ul id="option">
+    <li>
+        <a href="list_add_to_cart.php" title="Giỏ hàng của tôi"> &#128092 </a>
+    </li>
+</ul>
+<div class="clearfix"></div>
+</div>
+
 <div class="container">
     <!-- <a href="seller_addProduct.html" class="btn btn-warning">Thêm sản phẩm </a> -->
 <form action="process_pay.php" method="post">
@@ -146,8 +266,8 @@
         <?php    
         }
         ?>
-        <td>Phí vận chuyển: <?php echo number_format(30000)?></td>
-        <td  style ="text-align: center; vertical-align: middle;right: 15%;"> <?php echo "Tổng thanh toán: " .number_format($totalAll + 30000); ?></td>
+        <td><b>Phí vận chuyển: <?php echo number_format(30000)?></b></td>
+        <td  style ="text-align: center; vertical-align: middle;right: 15%;"><b><?php echo "Tổng thanh toán: " .number_format($totalAll + 30000); ?></b></td>
         <td style="vertical-align: middle;">
             <input class ="btn btn-danger" type="submit" value="Đặt hàng" name="buy_now">
         </td>
@@ -167,11 +287,6 @@
     </tbody>
 </table>
     </div>
-</form>       
-                
-
-                
-            
-    
+</form>           
 </body>
 </html>
