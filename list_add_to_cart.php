@@ -2,7 +2,7 @@
 session_start();
 
 // Kết nối với cơ sở dữ liệu
-$conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
+$conn = new mysqli('localhost', 'root', 'pw', 'bookstore');
 if ($conn->connect_error) {
     die("Connect failed" . mysqli_connect_error());
 }
