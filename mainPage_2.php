@@ -743,16 +743,6 @@
             </ul>
         </div>
     
-    <!-- <p id="inf"> 
-        <b><i>See us more on</i></b>
-        <br>
-        <a href="https://www.facebook.com/profile.php?id=100022034102353&sk=grid">Facebook</a>
-        <a href=""><b>Instagram</b></a>
-        <a href="">Tiktok</a>
-        <a href=""><b>Youtube</b></a>
-     
-    </p> -->
-    <!-- INFORMATION, COPYRIGHT -->
 
 </body>
 </html>
