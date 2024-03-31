@@ -112,7 +112,7 @@
 
     <!-- Xử lí PHP để in ra các sản phẩm đã được thêm vào -->
     <?php
-    $conn = new mysqli('localhost', 'root', 'Conanvskid1!', 'bookstore');
+    $conn = new mysqli('localhost', 'root', 'pw', 'bookstore');
     if($conn->connect_error){
         die("Connect failed". mysqli_connect_error());
     }
